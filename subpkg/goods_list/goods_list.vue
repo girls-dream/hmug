@@ -2,7 +2,7 @@
   <view>
     <van-card
       :thumb-link="`/subpkg/goods_detail/goods_detail?id=${item.goods_id}`"
-      :thumb="item.goods_small_logo"
+      :thumb="item.goods_small_logo || defaultPic"
       v-for="item in goods"
       :key="item.goods_id"
       :price="item.goods_price | toFixed"
