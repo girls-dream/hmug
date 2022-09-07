@@ -26,9 +26,13 @@
       "navigationBarTitleText": "",
       "enablePullDownRefresh": false
     }
-
   }],
-
+  "subPackages": [{
+    "root": "subpkg",
+    "pages": [{
+      "path": "goods_detail/goods_detail"
+    }]
+  }],
   "tabBar": {
     "selectedColor": "#C00000",
     "list": [{
