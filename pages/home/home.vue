@@ -22,11 +22,18 @@
         <!-- 楼层图片区域 -->
         <view class="floor-img-box">
           <!-- 左侧大图片的盒子 -->
-          <view class="left-img-box"><image class="left-img" :src="item.product_list[0].image_src" :style="{ width: item.product_list[0].image_width + 'rpx' }"></image></view>
+          <view class="left-img-box">
+            <image
+              @click="goodList(item.product_list[0].navigator_url)"
+              class="left-img"
+              :src="item.product_list[0].image_src"
+              :style="{ width: item.product_list[0].image_width + 'rpx' }"
+            ></image>
+          </view>
           <!-- 右侧 4 个小图片的盒子 -->
           <view class="right-img-box">
             <view class="right-img-item" v-for="(item2, i2) in item.product_list" :key="i2" v-if="i2 !== 0">
-              <image :src="item2.image_src" mode="widthFix" :style="{ width: item2.image_width + 'rpx' }"></image>
+              <image @click="goodList(item2.navigator_url)" :src="item2.image_src" mode="widthFix" :style="{ width: item2.image_width + 'rpx' }"></image>
             </view>
           </view>
         </view>
@@ -65,6 +72,13 @@ export default {
     goGoodsDatil(id) {
       uni.navigateTo({
         url: `/subpkg/goods_detail/goods_detail?id=${id}`
+      });
+    },
+    // 商品列表信息跳转
+    goodList(url) {
+      let que = url.split('?')[1];
+      uni.navigateTo({
+        url: `/subpkg/goods_list/goods_list?${que}`
       });
     },
     // 导航分类跳转

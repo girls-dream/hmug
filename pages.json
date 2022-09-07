@@ -31,6 +31,14 @@
     "root": "subpkg",
     "pages": [{
       "path": "goods_detail/goods_detail"
+    }, {
+      "path": "goods_list/goods_list",
+      "style": {
+        "onReachBottomDistance": 150,
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#F8F8F8"
+      }
+
     }]
   }],
   "tabBar": {
@@ -65,7 +73,11 @@
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "黑马优购",
     "navigationBarBackgroundColor": "#C00000",
-    "backgroundColor": "#FFFFFF"
+    "backgroundColor": "#FFFFFF",
+    "usingComponents": {
+      "van-card": "/wxcomponents/vant/dist/card/index"
+    },
+    "ignoreDevUnusedFiles": false
   },
   "uniIdRouter": {}
 }

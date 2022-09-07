@@ -1,5 +1,5 @@
 <template>
-  <view>商品列表</view>
+  <view>商品详情页</view>
 </template>
 
 <script>
